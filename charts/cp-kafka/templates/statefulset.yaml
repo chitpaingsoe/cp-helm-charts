@@ -1,7 +1,7 @@
 {{- if .Capabilities.APIVersions.Has "apps/v1" }}
 apiVersion: apps/v1
 {{- else }}
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 {{- end }}
 kind: StatefulSet
 metadata:
@@ -20,7 +20,7 @@ spec:
   {{- end }}
   serviceName: {{ template "cp-kafka.fullname" . }}-headless
   podManagementPolicy: {{ .Values.podManagementPolicy }}
-  replicas: {{ default 3 .Values.brokers }}
+  replicas: {{ default 1 .Values.brokers }}
   updateStrategy:
     type: {{ .Values.updateStrategy }}
   template:

@@ -52,11 +52,11 @@ NAME                                     TYPE       CLUSTER-IP     EXTERNAL-IP  
 unsung-salamander-cp-zookeeper-headless  ClusterIP  None           <none>       2888/TCP,3888/TCP  6m
 unsung-salamander-cp-zookeeper           ClusterIP  10.19.241.242  <none>       2181/TCP           6m
 
-==> v1beta1/StatefulSet
+==> v1/StatefulSet
 NAME                            DESIRED  CURRENT  AGE
 unsung-salamander-cp-zookeeper  3        3        6m
 
-==> v1beta1/PodDisruptionBudget
+==> v1/PodDisruptionBudget
 NAME                                MIN AVAILABLE  MAX UNAVAILABLE  ALLOWED DISRUPTIONS  AGE
 unsung-salamander-cp-zookeeper-pdb  N/A            1                1                    6m
 
@@ -109,7 +109,7 @@ The configuration parameters in this section control the resources requested and
 | Parameter | Description | Default |
 | --------- | ----------- | ------- |
 | `image` | Docker Image of Confluent Zookeeper. | `confluentinc/cp-zookeeper` |
-| `imageTag` | Docker Image Tag of Confluent Zookeeper. | `6.1.0` |
+| `imageTag` | Docker Image Tag of Confluent Zookeeper. | `7.4.0` |
 | `imagePullPolicy` | Docker Image Tag of Confluent Zookeeper. | `IfNotPresent` |
 | `imagePullSecrets` | Secrets to be used for private registries. | see [values.yaml](values.yaml) for details |
 
