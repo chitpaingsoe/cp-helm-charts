@@ -18,10 +18,10 @@ cp-zookeeper:
     ##
     ## Size for Data dir, where ZooKeeper will store the in-memory database snapshots.
     dataDirSize: 10Gi
-    # dataDirStorageClass: ""
+    dataDirStorageClass: "nfs-csi"
     ## Size for data log dir, which is a dedicated log device to be used, and helps avoid competition between logging and snaphots.
     dataLogDirSize: 10Gi
-    # dataLogDirStorageClass: ""
+    dataLogDirStorageClass: "nfs-csi"
     
   # TODO: find correct security context for user in this zk-image  
   securityContext: 
@@ -52,8 +52,8 @@ cp-kafka:
   heapOptions: "-Xms512M -Xmx512M"
   persistence:
     enabled: true
-    # storageClass: ""
-    size: 50Gi
+    storageClass: "nfs-csi"
+    size: 100Gi
     disksPerBroker: 1
   resources: {}
   ## If you do want to specify resources, uncomment the following lines, adjust them as necessary,
